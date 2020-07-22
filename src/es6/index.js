@@ -90,3 +90,48 @@ console.log(globalVar)
 
 const a = 'b'
 a =  'a'
+
+
+
+/*-------------------------------------------------- Objects params ------------------------------------------------------*/
+let name = 'Jorge'
+let age =  28
+
+let obj = { nombre: name, edad: age }
+console.log(obj)
+
+/*---------------- es6 --------------------*/
+let obj2 = { name, age }
+console.log(obj2)
+
+
+
+/*-------------------------------------------------- Arrow functions ----------------------------------------------------------*/
+const names = [
+  {name: 'Jorge', age: 28},
+  {name: 'Omar', age: 24},
+  {name: 'Raul', age: 28}
+]
+
+let listOfNames = names.map(function (item) {
+  console.log(item.name)
+})
+
+let listOfNames2 = names.map(item => console.log(item.name))
+
+
+
+/*-------------------------------------------------- promises ------------------------------------------------------------------*/
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (false) {
+      resolve('succes')
+    } else {
+      reject('Algo salio mal')
+    }
+  })
+}
+
+helloPromise()
+.then(resolveAnswer => console.log(resolveAnswer))
+.catch(error => console.log(error))
